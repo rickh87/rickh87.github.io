@@ -12,4 +12,6 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
