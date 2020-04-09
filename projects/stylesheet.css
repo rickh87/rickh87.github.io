@@ -12,6 +12,9 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
-    margin-top: 200px;
-    margin-bottom: 200px
+    margin-top: 300px;
+    margin-bottom: 300px
+}
+.tcenter {
+ text-align: center
 }
