@@ -7,8 +7,8 @@
   width: 50%;
 }
 .center.rotate90 {
-	margin-left: 200px;
-	margin-right: 200px;
+	margin-left: 500px;
+	margin-right: 500px;
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
