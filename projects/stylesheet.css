@@ -15,7 +15,9 @@
     margin-top: 300px;
     margin-bottom: 300px
 }
- .tab { margin-left: 70pt; }
+
+ p {text-indent:40px;}
+
  .indented {
    padding-left: 50pt;
    padding-right: 50pt;
