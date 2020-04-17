@@ -1,0 +1,1203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.5  (Win32)">
+	<META NAME="AUTHOR" CONTENT="PTL">
+	<META NAME="CREATED" CONTENT="20120717;2080000">
+	<META NAME="CHANGEDBY" CONTENT="PTL">
+	<META NAME="CHANGED" CONTENT="20120717;2080000">
+	<META NAME="AppVersion" CONTENT="12.0000">
+	<META NAME="Company" CONTENT="PTL">
+	<META NAME="DocSecurity" CONTENT="0">
+	<META NAME="HyperlinksChanged" CONTENT="false">
+	<META NAME="LinksUpToDate" CONTENT="false">
+	<META NAME="ScaleCrop" CONTENT="false">
+	<META NAME="ShareDoc" CONTENT="false">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 0.5in }
+		P { margin-bottom: 0.08in; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		A:link { color: #0000ff; so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" DIR="LTR">
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><FONT SIZE=5>The
+Family 2 Programmer</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><FONT SIZE=5>By</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><FONT SIZE=5>Rick
+Holmes</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><FONT SIZE=5>Electronics
+Engineer</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><FONT SIZE=5>Electronic
+Product Testing Center (EPTC)</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><FONT SIZE=5>Defense
+Supply Center Columbus (DSCC)</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><FONT SIZE=5>Defense
+Logistics Agency (DLA)</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><A HREF="mailto:richard.m.holmes@dla.mil"><FONT SIZE=5>richard.m.holmes@dla.mil</FONT></A></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><FONT SIZE=5>(614)
+692-9870</FONT></P>
+<P STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; page-break-before: always">
+Introduction</P>
+<P STYLE="margin-bottom: 0.14in">	One of the missions of the
+Electronics Product Testing Center (EPTC) is the PROM/ROM program.
+This is a program where DLA buys and stocks blank Programmable Read
+Only Memory(PROMS) devices and upon customer demand programs them
+with unique software to make  Read Only Memory (ROM) devices. This
+converts the devices from the PROM&rsquo;s NSN to the ROM&rsquo; NSN.
+ROMs made from a common PROM are collected into &ldquo;Families.&rdquo;
+The common PROM is called a &ldquo;head of Family&rdquo;. There are
+currently 283 different heads of Families. Consequently, 283
+different PROMs are stocked by NSN. Each Family may have from just a
+few members to hundreds of members. There are over 15,000 members
+collectively. Converting blank PROMs into unique ROMs eliminates the
+need to stock 15,000 individual NSNs.</P>
+<P STYLE="margin-bottom: 0.14in">	Up until October, 2011, the
+PROM/ROM mission was performed at the Defense Depot Hill Utah (DDHU),
+Hill AFB.  At that time, all the PROM/ROM equipment was transferred
+to EPTC including a Data I/O 29B programmer which is used to program
+Families 54, 55, 56, 57 and 58, a Spectrum Dynamics 500 programmer
+which is used to program Family 2 and a Data I/O Unisite Xpi
+programmer which is used to program all the other remaining Families.
+Some other programmers such as a Data I/O System 19, Data I/O 222 and
+ChipMaster 6000 were also transferred, but they are not used.
+However, according to the cognizant engineers at DDHU, the Spectrum
+Dynamics programmer has not been operational since 2003 and it is
+uneconomical to repair even if someone could be found to repair it.
+This left EPTC without the capability to program Family 2 devices.</P>
+<P STYLE="margin-bottom: 0.14in"><FONT COLOR="#ff0000">             
+Devices are sent to Lansdale for programming</FONT></P>
+<P STYLE="margin-bottom: 0.14in">	The head of Family is a Harris
+HM-0512-8 NSN 5962-00-003-2304. According to the HM-0512-8
+specification sheet, this device is programmable by a Data I/O System
+19 with a 909-1054-3 card set. EPTC has the System 19 but not this
+particular card set. Quotes for the card set were solicited from
+vendors but all the responses were in excess of $6,500 and all the
+card sets were used with no guarantee of working.  
+</P>
+<P STYLE="margin-bottom: 0.14in">	Next, the possibility of designing
+an adapter for an existing programmer was investigated. However,
+because the HM-0512-8 requires a negative programming voltage while
+other similar devices use a positive programming voltage, designing,
+building and using an adapter would be unwieldy and may induce damage
+to an otherwise serviceable programmer. 
+</P>
+<P STYLE="margin-bottom: 0.14in">	Next, the possibility of designing
+and building a programmer from scratch was investigated. From
+examination of the HM-0512-8 data sheet which included instructions
+for programming the devices, it was decided that the datasheet
+contained sufficient detail that designing and building a programmer
+was the most viable option.</P>
+<P STYLE="margin-bottom: 0.14in">	</P>
+<P STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; page-break-before: always">
+Programming Algorithm</P>
+<P STYLE="margin-bottom: 0.14in">The relays are configured to connect
+the device as shown in Figure X. To address a particular word in
+memory, the appropriate switches are set to the equivalent binary
+word where a logical low is -5 VDC and a logical 1 is an open
+circuit. A programming pulse is applied to the fusing circuit which
+creates a -7 VDC pulse to the first bit to be changed from a logical
+low to a logical high. Skipping any bit which is to remain  low,
+repeat the programming pulse until the 8 bit byte has been completely
+programmed. Only one bit is programmed at a time. Increment the
+address and repeat the process to program the next 8 bit byte</P>
+<P STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in">Figure X. Programming
+Circuit</P>
+<P STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; page-break-before: always">
+<BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in">Figure X. Family 2
+Programmer Setup</P>
+<P STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; page-break-before: always">
+Program Listing</P>
+<P STYLE="margin-bottom: 0.14in"><FONT SIZE=2 STYLE="font-size: 9pt">/*
+</FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in"><FONT SIZE=2 STYLE="font-size: 9pt">Harris
+(Lansdale) 0512 Programmer.</FONT></P>
+<P STYLE="margin-bottom: 0.14in"> <FONT SIZE=2 STYLE="font-size: 9pt">Data
+is read in from a text file via a comm port from a PC and into a 64
+element string array. The data file consists of 8 ASCII characters of
+&quot;0&quot; or &quot;1&quot; representing a byte. The bytes are in
+consecutive order from 0 to 63. To address a particular word in the
+memory, the input relays are controlled by the address counter to
+close the relay contacts to apply -5.0 VDC to make a logic 0 or leave
+the relay contacts open to make a logic 1. Each bit of the byte is
+tested to see if it is a 1. If it is, a -5 VDC programming voltage is
+applied for 700 msec.  Otherwise, it is skipped and the next bit is
+tested until all 8 bits of the byte are tested. Once the current byte
+has been programmed, the address counter is incremented and the
+process is repeated for the next byte.</FONT></P>
+<P STYLE="margin-bottom: 0.14in">  <FONT SIZE=2 STYLE="font-size: 9pt">*/</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">char*
+menuStrings[] = {&quot;\n\n\n   Harris 0512 Programmer (Family
+2)\n\n&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">&quot;   1) Load RAM from
+file&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">&quot;   2) Load RAM from
+master device&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">&quot;   3) Blank Check&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">&quot;   4) Program device&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">&quot;   5) Checksum RAM&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">&quot;   6) Checksum
+device&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">&quot;   7) Read device
+contents.&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">&quot;   8) Read the
+contents of RAM&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">&quot;   Enter 1 - 8 -&gt;&quot;};</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">char
+incomingByte;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">String
+myString[] =  {&quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;, </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+        <FONT SIZE=2 STYLE="font-size: 9pt">&quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+        <FONT SIZE=2 STYLE="font-size: 9pt">&quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+        <FONT SIZE=2 STYLE="font-size: 9pt">&quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+        <FONT SIZE=2 STYLE="font-size: 9pt">&quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;, </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+        <FONT SIZE=2 STYLE="font-size: 9pt">&quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+        <FONT SIZE=2 STYLE="font-size: 9pt">&quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;,</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+        <FONT SIZE=2 STYLE="font-size: 9pt">&quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;, &quot;00000000&quot;, &quot;00000000&quot;,
+&quot;00000000&quot;};</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">void
+loadRAMfromFile(void);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">void
+loadRAMfromDevice(void);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">void
+blankCheck(void);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">void
+programDevice(void);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">void
+checksumRAM(void);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">void
+verifyDevice(void);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">void
+readRAM(void);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">void
+setup() {                </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">//
+initialize the digital pins as outputs.</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(2,
+OUTPUT);    // D0 programming only, not for reading from prom</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(3,
+OUTPUT);    // D1</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(4,
+OUTPUT);    // D2</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(5,
+OUTPUT);    // D3</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(6,
+OUTPUT);    // D4</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(7,
+OUTPUT);    // D5</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(8,
+OUTPUT);    // D6</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(9,
+OUTPUT);    // D7</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(10,
+OUTPUT);   // programming pulse</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(11,
+OUTPUT);   // clear the address generator</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(12,
+OUTPUT);   // increment the address generator </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">/*
+A0 thru A5 and E1 and E2 should always be tri stated when applying
+programming voltage.</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">   <FONT SIZE=2 STYLE="font-size: 9pt">E1
+and E2 should always remain high when reading the prom */</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(22,
+OUTPUT);   // A0 address for reading prom only</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(23,
+OUTPUT);   // A1</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(24,
+OUTPUT);   // A2 </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(25,
+OUTPUT);   // A3</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(26,
+OUTPUT);   // A4</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(27,
+OUTPUT);   // A5</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(28,
+OUTPUT);   // E1</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(29,
+OUTPUT);   // E2</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(30,
+OUTPUT);   // address buffer enable.</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">/*
+B0 thru B7 should always be tristated when applying programming
+pulses */ </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(31,
+INPUT);    // B0</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(32,
+INPUT);    // B1</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(33,
+INPUT);    // B2</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(34,
+INPUT);    // B3</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(35,
+INPUT);    // B4</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(36,
+INPUT);    // B5</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(37,
+INPUT);    // B6</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(38,
+INPUT);    // B7</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(39,
+OUTPUT);   // data buffer enable</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(40,
+OUTPUT);   // G2' open when programming, closed to ground when
+reading.</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"> <FONT SIZE=2 STYLE="font-size: 9pt">/*
+relay 41 and 42 should NEVER be turned on at the same time. If they
+are, the -5 VDC will</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">be
+shorted to ground</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"> <FONT SIZE=2 STYLE="font-size: 9pt">*/</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">pinMode(44,
+OUTPUT);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"> 
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(11,HIGH);  // clear</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"> 
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(12,LOW);   // clock 
+   </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"> 
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(30, HIGH); //
+tristate the address buffer</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"> 
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(39, HIGH); //
+tristate the data buffer</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"> 
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(40, LOW);  // G2'
+open</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"> 
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(44, LOW);  // G1
+ground</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"> 
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.begin(2400);     // set
+serial port to 2400 baud</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">  <FONT SIZE=2 STYLE="font-size: 9pt">}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">void
+loop() {</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">   
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(11,LOW);            
+                // clear the address generator (synchronous counter)</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">delay
+(10);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">   
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(12, HIGH);          
+                // since this is a synchronous counter, give it a
+clock pulse</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">delay
+(10);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">   
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(12,LOW);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">   
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(11, HIGH);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int i=0; i &lt; 63; i++){                       // because the
+outputs of the counter are now inverted, the clock must be</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(12, HIGH);          
+           // run up to 63 (11 1111) so that the address relays are
+turned off</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">delay
+(10);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(12,LOW);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">delay
+(10);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int m=0; m&lt;10; m++){                         // output the menu</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">       
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(menuStrings[m]);}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">   
+<FONT SIZE=2 STYLE="font-size: 9pt">while(Serial.available() ==0){}; 
+                // wait fo a character to come in</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">incomingByte
+= Serial.read();                     // read the character</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">switch
+(incomingByte) {                           // test the character to
+see which menu item was selected and</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">      <FONT SIZE=2 STYLE="font-size: 9pt">case
+'1':                                       // go to appropriate
+subroutine</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">loadRAMfromFile();</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">break;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">      <FONT SIZE=2 STYLE="font-size: 9pt">case
+'2':</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">loadRAMfromDevice();</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">break;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">      <FONT SIZE=2 STYLE="font-size: 9pt">case
+'3':</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">blankCheck();</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">break;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">      <FONT SIZE=2 STYLE="font-size: 9pt">case
+'4':</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">programDevice();</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">break;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">      <FONT SIZE=2 STYLE="font-size: 9pt">case
+'5':</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">checksumRAM();</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">break;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">      <FONT SIZE=2 STYLE="font-size: 9pt">case
+'6':</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">checksumDevice();</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">break;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">      <FONT SIZE=2 STYLE="font-size: 9pt">case
+'7':</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">readDevice();</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">break;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">      <FONT SIZE=2 STYLE="font-size: 9pt">case
+'8':</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">readRAM();</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">break;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">      <FONT SIZE=2 STYLE="font-size: 9pt">default:</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;\n   Invalid
+input.   Enter 1 -8 -&gt;&quot;);}         // invalid input was
+entered          </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">void
+loadRAMfromFile(){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">char
+temp;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">boolean
+ok = false;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Loading RAM
+from PC file. Start file transfer from PC&quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.flush();</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int i=0; i &lt; 64; i++){                      // go through each
+address</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">            
+<FONT SIZE=2 STYLE="font-size: 9pt">for(int j =0; j &lt; 8; j++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                
+<FONT SIZE=2 STYLE="font-size: 9pt">while(ok == false){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+   <FONT SIZE=2 STYLE="font-size: 9pt">while (Serial.available() ==
+0){}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+   <FONT SIZE=2 STYLE="font-size: 9pt">temp = Serial.read();</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+   <FONT SIZE=2 STYLE="font-size: 9pt">if ((temp == '0') || (temp ==
+'1')){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+       <FONT SIZE=2 STYLE="font-size: 9pt">ok = true;}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+<FONT SIZE=2 STYLE="font-size: 9pt">}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+<FONT SIZE=2 STYLE="font-size: 9pt">ok = false;         </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+<FONT SIZE=2 STYLE="font-size: 9pt">myString[i].setCharAt(j, temp);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+<FONT SIZE=2 STYLE="font-size: 9pt">}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">             
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(myString[i]);}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">   
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.flush();          </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">   
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;\n   Done&quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">return;}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">void
+loadRAMfromDevice(){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">int
+readIn = 0;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Loading RAM
+from master.&quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(28, HIGH);          
+    // Set the enable E1</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(29, HIGH);          
+    // Set the enable E2</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(44, LOW);           
+    // Make sure -5 VDC is off on G1</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(40, HIGH);          
+    // Connect G2' to ground</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int m = 0; m &lt; 6; m++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">            
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(m+22, LOW);}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int j = 2; j &lt; 10; j++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">            
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(j, LOW);}           
+// make sure B0-B7 of PROM is connected to Arduino data 31 thru 38</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(30, LOW);           
+    // Enable address and data buffers</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(39, LOW);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int a5 = 0; a5 &lt; 2; a5++){       // These loopa generate the PROM
+address</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">          
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(27, a5);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">           <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int a4 = 0; a4 &lt; 2; a4++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">             
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(26, a4);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">              <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int a3 = 0; a3 &lt; 2; a3++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(25, a3);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+<FONT SIZE=2 STYLE="font-size: 9pt">for (int a2 = 0; a2 &lt; 2;
+a2++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+    <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(24, a2);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+    <FONT SIZE=2 STYLE="font-size: 9pt">for (int a1 = 0; a1 &lt; 2;
+a1++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+       <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(23, a1);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+       <FONT SIZE=2 STYLE="font-size: 9pt">for (int a0 = 0; a0 &lt;
+2; a0++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(22, a0);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">delay(10);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">for (int k = 0; k &lt;
+8; k++){    //This loop reads the PROM data bit bybit from B0 to B7</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+               <FONT SIZE=2 STYLE="font-size: 9pt">readIn =
+digitalRead(38-k);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+               <FONT SIZE=2 STYLE="font-size: 9pt">if(readIn ==
+HIGH){ </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+                  
+<FONT SIZE=2 STYLE="font-size: 9pt">myString[((32*a5)+(16*a4)+(8*a3)+(4*a2)+(2*a1)+(a0))].setCharAt(k,
+'1');}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+               <FONT SIZE=2 STYLE="font-size: 9pt">else{</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+                  
+<FONT SIZE=2 STYLE="font-size: 9pt">myString[((32*a5)+(16*a4)+(8*a3)+(4*a2)+(2*a1)+(a0))].setCharAt(k,
+'0');}}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+          
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(myString[((32*a5)+(16*a4)+(8*a3)+(4*a2)+(2*a1)+(a0))]);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">           <FONT SIZE=2 STYLE="font-size: 9pt">}}}}}}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(30, HIGH);          
+      // tristate the address buffer</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(39, HIGH);          
+      // tristate the data buffer       </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Done.&quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">     <FONT SIZE=2 STYLE="font-size: 9pt">return;}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">void
+blankCheck(){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">boolean
+blank = true;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">int
+readIn;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Checking if
+device is blank.&quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(28, HIGH);          
+    // Set the enable E1</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(29, HIGH);          
+    // Set the enable E2</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(44, LOW);           
+    // Make sure -5 VDC is off on G1</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(40, HIGH);          
+    // Connect G2' to ground</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int m = 0; m &lt; 6; m++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">            
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(m+22, LOW);} </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int j = 2; j &lt; 10; j++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">            
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(j, LOW);}           
+// make sure B0-B7 of PROM is connected to Arduino data 31 thru 38   
+</FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(30, LOW);           
+    // enable the address buffer</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(39, LOW);           
+    // enable the data buffer</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int a5 = 0; a5 &lt; 2; a5++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">          
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(27, a5);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">           <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int a4 = 0; a4 &lt; 2; a4++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">             
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(26, a4);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">              <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int a3 = 0; a3 &lt; 2; a3++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(25, a3);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+<FONT SIZE=2 STYLE="font-size: 9pt">for (int a2 = 0; a2 &lt; 2;
+a2++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+    <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(24, a2);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+    <FONT SIZE=2 STYLE="font-size: 9pt">for (int a1 = 0; a1 &lt; 2;
+a1++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+       <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(23, a1);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+       <FONT SIZE=2 STYLE="font-size: 9pt">for (int a0 = 0; a0 &lt;
+2; a0++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(22, a0);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">delay(5);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">for (int k = 0; k &lt;
+8; k++){    </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+               <FONT SIZE=2 STYLE="font-size: 9pt">readIn =
+digitalRead(38-k);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+               <FONT SIZE=2 STYLE="font-size: 9pt">if(readIn ==
+HIGH){ </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+                   <FONT SIZE=2 STYLE="font-size: 9pt">blank =
+false;}}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">}}}}}}
+   </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(30, HIGH);          
+      // tristate the address buffer</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(39, HIGH);          
+      // tristate the data buffer       </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">if
+(blank){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">            
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Done. Device
+is blank.&quot;);}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">else{</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">            
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Done.
+WARNING! Device not blank!&quot;);}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">return;}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">void
+programDevice(){    </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Programming
+device.&quot;); </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(11, LOW);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">delay(5);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(12, HIGH);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">delay(5);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(12, LOW);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">delay(5);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(11, HIGH);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(30, HIGH);          
+    // tristate the address buffer</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(39, HIGH);          
+    // tristate the data buffer</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(40, LOW);           
+    // disconnect G2' from ground and leave open</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(44, HIGH);          
+    // Connect G1 to -5 VDC</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int i=0; i &lt; 64; i++){           // for testing only</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">//
+        for (int i=0; i &lt; 64; i++){                    // go
+through each address</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">              <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int j=7; j &gt; -1; j--){                 // go through each
+character(bit) in the byte</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+ <FONT SIZE=2 STYLE="font-size: 9pt">if (myString[i].charAt(j)==
+'1'){      // test to see if the bit needs to be programmed</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite((7-j+2), HIGH);
+      // add 2 because byte starts on digital output 2</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">delay(10);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(10, LOW);      
+      // turn on the programming pulse</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">//
+                      delay(25);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">delay(700);                 
+      // wait the appropriate amount of time</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(10, HIGH);     
+      // turn off programming pulse</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">delay(10);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite((7-j+2), LOW);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+     <FONT SIZE=2 STYLE="font-size: 9pt">delay(10);}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">             <FONT SIZE=2 STYLE="font-size: 9pt">}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">             <FONT SIZE=2 STYLE="font-size: 9pt">if
+(i != 63){                                // don't increment the last
+time</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(12, HIGH);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                
+<FONT SIZE=2 STYLE="font-size: 9pt">delay (10);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(12,LOW);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                
+<FONT SIZE=2 STYLE="font-size: 9pt">delay (50);}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        <FONT SIZE=2 STYLE="font-size: 9pt">}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">       
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(44, LOW);           
+                // Turn off the - 5 VDC</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">       
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Done.&quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">return;}
+  </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">   
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">   <FONT SIZE=2 STYLE="font-size: 9pt">void
+checksumRAM(void){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">int
+checkSum = 0;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">int
+byteVal;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">int
+index;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Performing
+checksum on RAM&quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int i=0; i &lt; 64; i++){                      // go through each
+address</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">             
+<FONT SIZE=2 STYLE="font-size: 9pt">byteVal = 0;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">             
+<FONT SIZE=2 STYLE="font-size: 9pt">index = 128;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">              <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int j=0; j &lt; 8; j++){                  // go through each
+character(bit) in the byte</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+ <FONT SIZE=2 STYLE="font-size: 9pt">if (myString[i].charAt(j)== '1')</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+      <FONT SIZE=2 STYLE="font-size: 9pt">byteVal = byteVal + index;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">             
+<FONT SIZE=2 STYLE="font-size: 9pt">index = index/2;}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">             
+<FONT SIZE=2 STYLE="font-size: 9pt">checkSum = checkSum + byteVal;}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Done.
+Checksum is &quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.print(checkSum, HEX);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot; &quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">return;}
+</FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">void
+checksumDevice(void){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">int
+checkSum = 0;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">int
+byteVal;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">int
+index;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">int
+readIn;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Performing
+checksum on Device&quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(28, HIGH);          
+    // Set the enable E1</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(29, HIGH);          
+    // Set the enable E2</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(44, LOW);           
+    // Make sure -5 VDC is off on G1</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(40, HIGH);          
+    // Connect G2 prime to ground</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int m = 0; m &lt; 6; m++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">            
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(m+22, LOW);}    </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int j = 2; j &lt; 10; j++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">            
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(j, LOW);}           
+// make sure B0-B7 of PROM is connected to Arduino data 31 thru 38   
+ </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(30, LOW);           
+    // enable the address buffer</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(39, LOW);           
+    // enable the data buffer</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int a5 = 0; a5 &lt; 2; a5++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">          
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(27, a5);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">           <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int a4 = 0; a4 &lt; 2; a4++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">             
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(26, a4);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">              <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int a3 = 0; a3 &lt; 2; a3++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(25, a3);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+<FONT SIZE=2 STYLE="font-size: 9pt">for (int a2 = 0; a2 &lt; 2;
+a2++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+    <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(24, a2);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+    <FONT SIZE=2 STYLE="font-size: 9pt">for (int a1 = 0; a1 &lt; 2;
+a1++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+       <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(23, a1);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+       <FONT SIZE=2 STYLE="font-size: 9pt">for (int a0 = 0; a0 &lt;
+2; a0++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(22, a0);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">delay(5);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">byteVal = 0;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">index = 128;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">for (int k = 0; k &lt;
+8; k++){    </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+               <FONT SIZE=2 STYLE="font-size: 9pt">readIn =
+digitalRead(38-k);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+               <FONT SIZE=2 STYLE="font-size: 9pt">if(readIn ==
+HIGH){ </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+                   <FONT SIZE=2 STYLE="font-size: 9pt">byteVal =
+byteVal + index;}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+               <FONT SIZE=2 STYLE="font-size: 9pt">index = index/2;}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">checkSum = checkSum +
+byteVal;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">}}}}}}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(30, HIGH);          
+      // tristate the address buffer</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(39, HIGH);          
+      // tristate the data buffer       </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Done.
+Checksum is &quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.print(checkSum, HEX);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot; &quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">return;}
+</FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">void
+readDevice(void){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">int
+readIn;</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">String
+tempString[] = {&quot;00000000&quot;,&quot;11111111&quot;};</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Reading
+device contents.&quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(28, HIGH);          
+    // Set the enable E1</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(29, HIGH);          
+    // Set the enable E2</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(44, LOW);           
+    // Make sure -5 VDC is off on G1</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(40, HIGH);          
+    // Connect G2 prime to ground</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int m = 0; m &lt; 6; m++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">            
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(m+22, LOW);}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int j = 2; j &lt; 10; j++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">            
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(j, LOW);}           
+// make sure B0-B7 of PROM is connected to Arduino data 31 thru 38</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(30, LOW);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(39, LOW);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int a5 = 0; a5 &lt; 2; a5++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">          
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(27, a5);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">           <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int a4 = 0; a4 &lt; 2; a4++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">             
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(26, a4);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">              <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int a3 = 0; a3 &lt; 2; a3++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(25, a3);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+<FONT SIZE=2 STYLE="font-size: 9pt">for (int a2 = 0; a2 &lt; 2;
+a2++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+    <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(24, a2);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+    <FONT SIZE=2 STYLE="font-size: 9pt">for (int a1 = 0; a1 &lt; 2;
+a1++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+       <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(23, a1);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+       <FONT SIZE=2 STYLE="font-size: 9pt">for (int a0 = 0; a0 &lt;
+2; a0++){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(22, a0);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">delay(5);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+            <FONT SIZE=2 STYLE="font-size: 9pt">for (int k = 0; k &lt;
+8; k++){    </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+               <FONT SIZE=2 STYLE="font-size: 9pt">readIn =
+digitalRead(38-k);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+               <FONT SIZE=2 STYLE="font-size: 9pt">if(readIn ==
+HIGH){ </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+                   <FONT SIZE=2 STYLE="font-size: 9pt">tempString[1].setCharAt(k,
+'1');}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+               <FONT SIZE=2 STYLE="font-size: 9pt">else{</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+                   <FONT SIZE=2 STYLE="font-size: 9pt">tempString[1].setCharAt(k,
+'0');}}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">                 
+           <FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(tempString[1]);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        <FONT SIZE=2 STYLE="font-size: 9pt">}}}}}}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">       
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(30, HIGH);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">       
+<FONT SIZE=2 STYLE="font-size: 9pt">digitalWrite(39, HIGH);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">       
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Done.&quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">return;}</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">void
+readRAM(void){</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">        
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Sending
+contents of RAM to serial port.&quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         <FONT SIZE=2 STYLE="font-size: 9pt">for
+(int i=0; i &lt; 64; i++){                      // go through each
+address</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">              
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(myString[i]);}    
+</FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">         
+<FONT SIZE=2 STYLE="font-size: 9pt">Serial.println(&quot;Done.&quot;);</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%">    <FONT SIZE=2 STYLE="font-size: 9pt">return;}</FONT></P>
+<P STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in"><IMG SRC="Family%202%20Programmer%20ver2_html_m535a6519.jpg" ALIGN=BOTTOM WIDTH=812 HEIGHT=633 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in"><IMG SRC="Family%202%20Programmer%20ver2_html_37afc2c3.jpg" ALIGN=BOTTOM WIDTH=830 HEIGHT=647 BORDER=0><IMG SRC="Family%202%20Programmer%20ver2_html_m395c9cc3.jpg" ALIGN=BOTTOM WIDTH=624 HEIGHT=801 BORDER=0><IMG SRC="Family%202%20Programmer%20ver2_html_ea5cf6a.jpg" ALIGN=BOTTOM WIDTH=624 HEIGHT=801 BORDER=0></P>
+<P STYLE="margin-bottom: 0.14in; page-break-before: always"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; page-break-before: always"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in">Data File for NSN
+5962-00-539-0687 P/N 238513-017 developed from Drawing 81413 Sheet 35
+and 36</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000100</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000110</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000110</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000110</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000100</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000010</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000110</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000100</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000110</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000110</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000100</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000010</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000110</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">11100000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">01100000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">10110000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">01100010</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">10110010</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">01100010</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">10110010</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">01100100</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">10110100</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">01100000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">10110000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">01100100</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">10110100</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">11010010</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">00000000</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">11010000</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in; page-break-before: always">
+Truth Table for the Hex to 7 Segment Decoder</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0.14in">Hex to 7 Segment
+Decoder Listing</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">Title		Decoder</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">Pattern		decoder.pds</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">Revision		A</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">Author		R.
+Holmes</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">Company		EPTC</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">Date		03/26/2012</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">CHIP
+decoder PAL16L8</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">;PINS	1	2	3	4	5	6	7	8	9	10</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">	B0	B1	B2	B3	NC	NC	NC	NC	NC	GND</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">;PINS	11	12	13	14	15	16	17	18	19	20</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">	NC	a	bb	c	d	e	f	g	NC	NC</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">EQUATIONS</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">a
+= /((/B3*/B2*/B1*B0)M + (/B3*B2*/B1*/B0) + (B3*/B2*B1*B0) +
+(B3*B2*/B1*B0)</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">bb
+= /((/B3*B2*/B1*B0) + (/B3*B2*B1*/B0) + (B3*/B2*B1*B0) +
+(B3*B2*/B1*/B0) + (B3*B2*B1)</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">c
+= /((/B3*/B2*/B1*/B0)  + (B3*B2*/B1*/B0) + (B3*B2*B1)</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"> <FONT SIZE=2 STYLE="font-size: 9pt">d
+= /((/B3*/B2*/B1*B0) + (/B3*B2*/B1*/B0)  + (/B3*B2*/B1*B0) +
+(/B3*B2*B1*B0) + (B3*/B2*/B1*B0) + (B3*/B2*B1*/B0) + (B3*B2*B1*B0)</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">e
+= /((/B3*/B2*/B1*B0) + (/B3*/B2*B1*B0) + (/B3*B2*/B1) +
+(/B3*B2*B1*B0) + (B3*/B2*/B1*B0))</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">f
+= /((/B3*/B2*/B1*B0) + (/B3*/B2*B1) + (/B3*/B2*B1) + (/B3*B2*B1*B0) +
+(B3*B2*/B1*B0))</FONT></P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><FONT SIZE=2 STYLE="font-size: 9pt">g
+= /((/B3*/B2*/B1) + (/B3*B2*B1*B0) + (B3*B2*/B1*/B0) </FONT>
+</P>
+<P STYLE="margin-bottom: 0.14in; line-height: 100%"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.14in"><IMG SRC="Family%202%20Programmer%20ver2_html_m2ae4e626.jpg" ALIGN=BOTTOM WIDTH=834 HEIGHT=569 BORDER=0></P>
+</BODY>
+</HTML>
