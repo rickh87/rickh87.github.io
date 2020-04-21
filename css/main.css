@@ -45,8 +45,7 @@ ul.posts li {
   margin-top: 50px;
   margin-bottom: 50px;
   width:75%;
-  height:75%;
-  object-fit:contain;
+  height:auto;
 }
 .center.rotate90 {
     -webkit-transform: rotate(90deg);
@@ -64,9 +63,3 @@ ul.posts li {
    padding-left: 50pt;
    padding-right: 50pt;
 }
-<style>
-  img {
-    width: 75%;
-    height: auto;
-    }
-</style>
