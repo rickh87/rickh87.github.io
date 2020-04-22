@@ -6,9 +6,16 @@ title: Satelite Antenna Rotor Controller
 <h1>{{ page.title }}</h1>
 
 <body>
+    <p class="indented"><font face = "Courier" size="4">The Rotor Controller will control two rotors to steer two yagi antennas in azimuth and elevation in real time to point to low earth orbitting satellites as they transit the sky. The code is hosted in the github repository. The Link is below.</p>
 
 	<img class = "center" src="rotor_controller.jpg" alt="Rotor Controller">
 	<img class = "center" src="rotors.jpg" alt="Rotors">
+
+	<p class="indented"><font face = "Courier" size="4">The large antenna is a 2-meter 16 element yagi that can be switched from left to right hand circular polarization. It has a beamwidth of approximately 45 degrees and a gain of 10.7 dBdc. The smaller antenna is 440 MHz 30 element yagi that can also be switched from left to rand hand polarization. The beamwidth is approximately 30 degrees and had a gain of 14.0 dBdc.</p>
 	<img class = "center" src="sat_ant.jpg" alt="Satellite Antennas">
+
+	<p class="indented"><font face = "Courier" size="4">The Rotor Controller uses 4 solid state realays to switch power to the approriate windings of the Uniden 110 rotors. Not implement yest is the code to read the accelerometer and the magnetic flus compass, home switch and limits switches. The accelerometer will measure 1 G pointing down so as the elevation rotor rotates, the accelerometer can measure elevation. The magnetic flux gate will measure azimuth. Steering commands will be recieved via USB in GS-232 format from a laptop running Ham Radio Deluxe. The code is hosted in the github repository. The Link is below.</p>
+	<img class = "center" src="rotor_controller_sheet1.jpg" alt="Sheet 1 of Rotor Controller Schematic">
+	<img class = "center" src="rotor_controller_sheet2.jpg" alt="Sheet 2 of Rotor Controller Schematic">
 
 </body>
